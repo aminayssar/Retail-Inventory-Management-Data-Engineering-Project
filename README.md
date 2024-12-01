@@ -37,3 +37,108 @@ The project integrates tools like SQL Server, Azure Data Factory, Python, and Az
 
   ```bash
   pip install pandas sqlalchemy statsmodels scikit-learn mlflow
+
+
+# 📦 Retail Inventory Management Project
+
+## 🗄️ Database Setup
+
+### SQL Server Database
+- [ ] Restore the **AdventureWorks** database
+- [ ] Import provided SQL scripts to create additional tables or views
+
+### Setup Workflow
+1. Run the Data Warehouse Design scripts in SQL Server
+2. Install required Python dependencies
+3. Execute Python scripts for ETL operations and demand forecasting
+
+## 📊 Entity-Relationship Diagram (ERD)
+
+The ERD schema represents key entities in retail inventory data:
+
+| Entity | Description |
+|--------|-------------|
+| **Products** | Information about products (ID, name, category, price) |
+| **Suppliers** | Supplier details (ID, name, contact information) |
+| **Sales** | Sales transactions linking products, quantities, revenues |
+| **Inventory Levels** | Current stock levels for each product |
+
+### 🔗 Key Relationship Highlights
+- **Products** ↔ **Suppliers**: One-to-Many
+- **Products** ↔ **Sales**: Many-to-Many
+- **Sales** tracks products sold
+- **Inventory Levels** monitors product availability
+
+## 💾 SQL Database Structure
+
+### Primary Tables
+- `Products`: Product information storage
+- `Suppliers`: Supplier details management
+- `Sales`: Transaction data recording
+- `InventoryLevels`: Stock level tracking
+
+### 🔍 Example SQL Queries
+
+#### Top-Selling Products
+```sql
+SELECT TOP 5 ProductID, SUM(Quantity) AS TotalSold 
+FROM Sales 
+GROUP BY ProductID 
+ORDER BY TotalSold DESC;
+```
+
+#### Low Stock Alerts
+```sql
+SELECT ProductID, StockLevel 
+FROM InventoryLevels 
+WHERE StockLevel < 50;
+```
+
+#### Monthly Revenue Analysis
+```sql
+SELECT 
+    YEAR(SaleDate) AS Year, 
+    MONTH(SaleDate) AS Month, 
+    SUM(TotalAmount) AS Revenue 
+FROM Sales 
+GROUP BY YEAR(SaleDate), MONTH(SaleDate) 
+ORDER BY Year, Month;
+```
+
+## 🏗️ Data Warehouse Architecture
+
+### Warehouse Components
+- **Fact Table**: `SalesFact`
+  - Stores sales transactions
+  - Links to dimension tables
+
+- **Dimension Tables**:
+  - `ProductDim`: Product attributes
+  - `SupplierDim`: Supplier details
+  - `TimeDim`: Time-related information
+  - `InventoryDim`: Inventory specifics
+
+## 🚀 Project Capabilities
+- Data-driven retail inventory management
+- Demand forecasting system
+- Integrated technologies:
+  - SQL: Data storage & processing
+  - Python: Data cleaning & forecasting
+  - Azure Machine Learning: Model deployment
+
+## 🤝 Contribution Guidelines
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## ⚠️ Requirements
+- SQL Server
+- Python 3.8+
+- Azure Machine Learning SDK
+
+## 📜 License
+Distributed under the MIT License. See `LICENSE` for more information.
+
+**Happy Coding! 👨‍💻👩‍💻**
