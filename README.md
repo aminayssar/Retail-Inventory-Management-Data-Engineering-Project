@@ -1,8 +1,15 @@
-# Retail-Inventory-Management-Data-Engineering-Project
+# 📦 Retail-Inventory-Management-Data-Engineering-Project
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
+[![SQL Server](https://img.shields.io/badge/SQL%20Server-2019+-red.svg)](https://www.microsoft.com/sql-server)
+[![Azure Machine Learning](https://img.shields.io/badge/Azure-Machine%20Learning-blueviolet)](https://azure.microsoft.com/services/machine-learning/)
+
+## 📝 Project Overview
 
 This project aims to improve inventory management and demand forecasting by leveraging the **AdventureWorks** dataset. The goal is to create a structured SQL database, perform ETL processes, and build forecasting models to help businesses make informed decisions on inventory levels and sales strategies.
 
-## Project Overview
+### 🎯 Project Goals
 
 The Retail Inventory Management and Forecasting project is designed to streamline inventory operations by focusing on three main components:
 
@@ -12,7 +19,7 @@ The Retail Inventory Management and Forecasting project is designed to streamlin
 
 The project integrates tools like SQL Server, Azure Data Factory, Python, and Azure Machine Learning to build a robust system for inventory management and forecasting.
 
-## Tools and Technologies
+## 🛠 Tools and Technologies
 
 - **SQL Server**: For managing and querying the relational database.
 - **Azure Data Factory**: For ETL (Extract, Transform, Load) operations.
@@ -21,9 +28,17 @@ The project integrates tools like SQL Server, Azure Data Factory, Python, and Az
 - **AdventureWorks Dataset**: A sample retail dataset provided by Microsoft, used for database design, data analysis, and reporting.  
   Download the dataset from the official Microsoft website: [AdventureWorks Sample Databases](https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure)
 
-## Setup and Installation
+## 🚀 Key Features
 
-### Prerequisites
+- [x] ERD Schema Design
+- [x] SQL Table Creation
+- [x] Advanced Querying
+- [ ] Machine Learning Model
+- [ ] Predictive Analytics
+
+## 🔧 Setup and Installation
+
+### 📋 Prerequisites
 
 - Install **SQL Server** and ensure you have access to **Azure Data Factory**.
 - Install Python 3.7+ and the following libraries:
@@ -37,9 +52,6 @@ The project integrates tools like SQL Server, Azure Data Factory, Python, and Az
 
   ```bash
   pip install pandas sqlalchemy statsmodels scikit-learn mlflow
-
-
-# 📦 Retail Inventory Management Project
 
 ## 🗄️ Database Setup
 
